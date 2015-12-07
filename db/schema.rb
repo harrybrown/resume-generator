@@ -11,91 +11,78 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150712180117) do
+ActiveRecord::Schema.define(version: 20151207184646) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "job_duties", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "description"
-    t.integer  "job_id",        limit: 8
-    t.integer  "display_order", limit: 8
+  create_table "contacts", force: :cascade do |t|
+    t.string   "full_name"
+    t.string   "address"
+    t.string   "address2"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zip"
+    t.string   "email"
+    t.string   "phone"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "jobs", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.string   "company"
-    t.string   "type_of_company"
-    t.string   "position_title"
-    t.string   "logo"
+  create_table "interests", force: :cascade do |t|
+    t.string   "name"
+    t.string   "description"
+    t.integer  "resume_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "miscellaneous_abilities", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "languages", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "miscellaneous", force: :cascade do |t|
+    t.string   "name"
     t.string   "description"
+    t.integer  "resume_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "resumes", force: :cascade do |t|
-    t.string   "job_type"
+    t.string   "target_job"
     t.string   "objective"
-    t.integer  "user_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
-  create_table "samples", force: :cascade do |t|
-    t.string   "site_link"
-    t.text     "my_contribution"
-    t.string   "boxed_logo"
-    t.string   "company_working_for"
-    t.text     "project_description"
-    t.text     "challenges"
-    t.string   "screenshot"
-    t.string   "mobile_screen_shot"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
+  create_table "school_achievements", force: :cascade do |t|
+    t.integer  "school_id"
+    t.string   "achievement"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
-  create_table "service_skills", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
+  create_table "schools", force: :cascade do |t|
     t.string   "name"
-    t.string   "description"
-    t.integer  "service_id",     limit: 8
-    t.integer  "my_skill_level", limit: 8
-    t.integer  "display_order",  limit: 8
+    t.string   "city"
+    t.string   "state"
+    t.date     "completion_date"
+    t.string   "field_of_study"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
-  create_table "services", force: :cascade do |t|
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
+  create_table "skills", force: :cascade do |t|
+    t.string   "skill_name"
     t.string   "description"
-  end
-
-  create_table "trainings", force: :cascade do |t|
-    t.string   "school"
-    t.datetime "end_date"
-    t.string   "course_of_study"
-    t.string   "level_of_completion"
-    t.datetime "created_at",          null: false
-    t.datetime "updated_at",          null: false
-  end
-
-  create_table "tutorials", force: :cascade do |t|
-    t.string   "video_embed_code"
-    t.string   "topic"
-    t.string   "category"
-    t.string   "description"
-    t.date     "publish_date"
-    t.datetime "created_at",       null: false
-    t.datetime "updated_at",       null: false
+    t.integer  "resume_id"
+    t.integer  "rating"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "users", force: :cascade do |t|
@@ -125,5 +112,24 @@ ActiveRecord::Schema.define(version: 20150712180117) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
+
+  create_table "work_duties", force: :cascade do |t|
+    t.integer  "work_id"
+    t.string   "task"
+    t.string   "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
+  create_table "works", force: :cascade do |t|
+    t.string   "title"
+    t.string   "company"
+    t.string   "city"
+    t.string   "state"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
 end

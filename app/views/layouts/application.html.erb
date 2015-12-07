@@ -16,42 +16,28 @@
     <nav id="no-nav">
       <div class="custom-ym-wrapper">
         <div class="ym-hlist">
-          <ul>
-            <li><%= link_to "About", about_index_path %></li>
-            <li><%= link_to "Skills", service_skills_path %></li>
-            <li><%= link_to "Jobs", jobs_path %></li>
-            <li><%= link_to "Training", trainings_path %></li>
-            <li><%= link_to "Services", servicers_path %></li>
-            <li><%= link_to "Duties", job_duties_path %></li>
-            <li><%= link_to "Misc", miscellaneous_abilities_path %></li>
+          <ul>            
+            <li><%= link_to "Users", users_path %></li>
             <li><%= link_to "Resume", resumes_path %></li>
+            <li><%= link_to "Contact", contacts_path %></li>
+            <li><%= link_to "Work", works_path %></li>
+            <li><%= link_to "Work Duties", work_duties_path %></li>
+            <li><%= link_to "School", schools_path %></li>
+            <li><%= link_to "Skills", skills_path %></li>
+            <li><%= link_to "School Achievements", school_achievements_path %></li>
+            <li><%= link_to "Languages", languages_path %></li>
+            <li><%= link_to "Interests", interests_path %></li>
             <% if user_signed_in? %>
               <li><Logged in as <strong><%= current_user.email %></strong></li>
-                <ul>
-                  <li><%= link_to "Users", users_path %></li>
-                  <li><%= link_to "Resume", resumes_path %></li>
-                  <li><%= link_to "Resume", resumes_path %></li>
-                  <li><%= link_to "Resume", resumes_path %></li>
-                  <li><%= link_to "Resume", resumes_path %></li>
-                  <li><%= link_to "Resume", resumes_path %></li>
-                  <li><%= link_to "Resume", resumes_path %></li>
-                  <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
-                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
-                </ul>
-              <li>
+              <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+              <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
             <% else %>
               <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
               <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>   
             <% end %>
-          </li>
-        </ul>
+          </ul>
 
-
-          <h2 style="line-height: 30px; margin: 0; color: #fff;font-size: 22px;">
-            <%= link_to(image_tag("/assets/rex-eye.png", :alt => "logo", :title => "Home", :style => "max-height: 40px; text-decoration: none;"), home_index_path) %>
-
-              T-Rex&nbsp;Designs
-          </h2>
+          
         </div>
       </div>
     </nav>
@@ -73,7 +59,6 @@
         <div class="ym-g50 ym-gl">
           <div class="ym-gbox">
 
-            <%= link_to(image_tag("/assets/logos/menu/home.png", :alt => "logo", :title => "Home"), 'http://www.t-rexdesigns.com') %>
 
 
           </div>
