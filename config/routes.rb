@@ -1,4 +1,15 @@
 Career::Application.routes.draw do
+  resources :miscellaneous
+  resources :interests
+  resources :languages
+  resources :languages
+  resources :skills
+  resources :school_achievements
+  resources :schools
+  resources :work_duties
+  resources :works
+  resources :resumes
+  resources :contacts
   devise_for :users
 
 

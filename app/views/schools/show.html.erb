@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @school.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @school.city %>
+</p>
+
+<p>
+  <strong>State:</strong>
+  <%= @school.state %>
+</p>
+
+<p>
+  <strong>Completion date:</strong>
+  <%= @school.completion_date %>
+</p>
+
+<p>
+  <strong>Field of study:</strong>
+  <%= @school.field_of_study %>
+</p>
+
+<%= link_to 'Edit', edit_school_path(@school) %> |
+<%= link_to 'Back', schools_path %>
