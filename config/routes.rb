@@ -1,25 +1,9 @@
 Career::Application.routes.draw do
   devise_for :users
-  resources :samples
-  resources :tutorials
-  resources :trainings
-  resources :miscellaneous_abilities
 
-  resources :job_duties
-
-  resources :jobs
-
-  resources :service_skills
-
-  resources :services
-
-  resources :resumes
 
   resources :users
 
-  resources :about
-
-  resources :contacts
 
   resources :home
 
