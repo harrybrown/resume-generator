@@ -1,0 +1,60 @@
+<div class="custom-ym-wrapper">
+  <div class="ym-wbox">   
+    <main>
+      <section class="box info">
+
+
+
+        <p id="notice"><%= notice %></p>
+
+        <h1>Portfolio Samples</h1>
+        <p>I've worked on at least 100 websites, but I don't include them all in my portfolio because much of my work has been with a team. I have only included the sites where I contributed a large percentage of the development or demonstrated strong coding skills.</p>
+<!-- 
+<table>
+<thead>
+<tr>
+  <th>Site link</th>
+  <th>My contribution</th>
+  <th>Boxed logo</th>
+  <th>Company working for</th>
+  <th>Project description</th>
+  <th>Challenges</th>
+  <th>Screenshot</th>
+  <th>Mobile screen shot</th>
+  <th colspan="3"></th>
+</tr>
+</thead>
+
+<tbody> -->
+        <% @samples.each do |sample| %>
+          <div class='portfolio-logo'>
+          <%= link_to image_tag("portfolio/logos/"+sample.boxed_logo, :class => 'portfolio-logo'), sample, :class => 'portfolio-logo' %>
+          <p class="fss" style="height: 40px; display: block;"><%= sample.my_contribution %></p>
+          </div>
+<!--       <tr>
+    <td><%= sample.site_link %></td>
+    <td><%= sample.my_contribution %></td>
+    <td><%= sample.boxed_logo %></td>
+    <td><%= sample.company_working_for %></td>
+    <td><%= sample.project_description %></td>
+    <td><%= sample.challenges %></td>
+    <td><%= sample.screenshot %></td>
+    <td><%= sample.mobile_screen_shot %></td>
+    <td><%#= link_to 'Show', sample %></td>
+    <td><%#= link_to 'Edit', edit_sample_path(sample) %></td>
+    <td><%#= link_to 'Destroy', sample, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr> -->
+      <% end %>
+<!--   </tbody>
+</table>
+
+<br> -->
+
+<%#= link_to 'New Sample', new_sample_path %>
+
+
+      </section>        
+    </main>   
+  </div>
+</div>
+

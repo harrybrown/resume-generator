@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>T-Rex Designs - Chicago Website Development - Ruby on Rails - WordPress</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <%= yield :head %>
+    <%= stylesheet_link_tag  "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+<!--     <video id="bgVideo" controls preload="false" autoplay loop muted>
+      <source src="../assets/the_sun.mp4" type="video/mp4" > 
+    </video> -->
+
+    <nav id="no-nav">
+      <div class="custom-ym-wrapper">
+        <div class="ym-hlist">
+          <ul>
+            <li><%= link_to "About", about_index_path %></li>
+            <li><%= link_to "Portfolio", samples_path %></li>
+            <li><%= link_to "Skills", service_skills_path %></li>
+            <li><%= link_to "Jobs", jobs_path %></li>
+            <li><%= link_to "Resume", resumes_path %></li>
+            <li><%= link_to "Tutorials", tutorials_path %></li>
+            <li><%= link_to "Contact", contacts_path %></li>
+            <% if user_signed_in? %>
+              <li><Logged in as <strong><%= current_user.email %></strong></li>
+                <ul>
+                  <li><%= link_to "Users", users_path %></li>
+                  <li><%= link_to "Resume", resumes_path %></li>
+                  <li><%= link_to "Resume", resumes_path %></li>
+                  <li><%= link_to "Resume", resumes_path %></li>
+                  <li><%= link_to "Resume", resumes_path %></li>
+                  <li><%= link_to "Resume", resumes_path %></li>
+                  <li><%= link_to "Resume", resumes_path %></li>
+                  <li><%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %></li>
+                  <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+                </ul>
+              <li>
+            <% else %>
+              <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+              <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>   
+            <% end %>
+          </li>
+        </ul>
+
+
+          <h2 style="line-height: 30px; margin: 0; color: #fff;font-size: 22px;">
+            <%= link_to(image_tag("/assets/rex-eye.png", :alt => "logo", :title => "Home", :style => "max-height: 40px; text-decoration: none;"), home_index_path) %>
+
+              T-Rex&nbsp;Designs
+          </h2>
+        </div>
+      </div>
+    </nav>
+    <div class="custom-ym-wrapper">
+        <main>
+          <% if notice %>
+            <p class="alert alert-success"><%= notice %></p>
+          <% end %>
+          <% if alert %>
+            <p class="alert alert-danger"><%= alert %></p>
+          <% end %>
+          <%= yield %>
+
+        </main>
+      </div>
+    </div>
+    <footer style="padding: 1.5em 0;">
+      <div class="custom-ym-wrapper">
+        <div class="ym-g50 ym-gl">
+          <div class="ym-gbox">
+
+            <%= link_to(image_tag("/assets/logos/menu/home.png", :alt => "logo", :title => "Home"), 'http://www.t-rexdesigns.com') %>
+            <%= link_to(image_tag("/assets/logos/menu/about.png", :alt => "logo", :title => "About"), about_index_path) %>
+            <%= link_to(image_tag("/assets/logos/menu/portfolio.png", :alt => "logo", :title => "Portfolio"), samples_path) %>
+            <%= link_to(image_tag("/assets/logos/menu/skills.png", :alt => "logo", :title => "Skills"), service_skills_path) %>
+            <%= link_to(image_tag("/assets/logos/menu/jobs.png", :alt => "logo", :title => "Jobs"), jobs_path) %>
+            <%= link_to(image_tag("/assets/logos/menu/resume.png", :alt => "logo", :title => "Resume"), resumes_path) %>
+            <%= link_to(image_tag("/assets/logos/menu/tutorials.png", :alt => "logo", :title => "Tutorials"), tutorials_path) %>
+            <%= link_to(image_tag("/assets/logos/menu/contact.png", :alt => "logo", :title => "Contact"), contacts_path) %>
+
+          </div>
+        </div>
+        <div class="ym-g50 ym-gr">
+          <div class="ym-gbox">
+            <p class="site-specs">This responsive web site has been designed, developed, and maintained by H. Leroy Brown. It’s built with Ruby on Rails, optimized for a fast page load, hosted on Heroku using their Cedar stack configuration (Ubuntu and MRI 1.9.2). Current Average load is 0.4s.</p>
+          </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- full skip link functionality in webkit browsers -->
+    <script src="../yaml/core/js/yaml-focusfix.js"></script>
+  </body>
+</html>

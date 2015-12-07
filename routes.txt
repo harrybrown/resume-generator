@@ -1,0 +1,122 @@
+                    Prefix Verb   URI Pattern                                 Controller#Action
+          new_user_session GET    /users/sign_in(.:format)                    devise/sessions#new
+              user_session POST   /users/sign_in(.:format)                    devise/sessions#create
+      destroy_user_session DELETE /users/sign_out(.:format)                   devise/sessions#destroy
+             user_password POST   /users/password(.:format)                   devise/passwords#create
+         new_user_password GET    /users/password/new(.:format)               devise/passwords#new
+        edit_user_password GET    /users/password/edit(.:format)              devise/passwords#edit
+                           PATCH  /users/password(.:format)                   devise/passwords#update
+                           PUT    /users/password(.:format)                   devise/passwords#update
+  cancel_user_registration GET    /users/cancel(.:format)                     devise/registrations#cancel
+         user_registration POST   /users(.:format)                            devise/registrations#create
+     new_user_registration GET    /users/sign_up(.:format)                    devise/registrations#new
+    edit_user_registration GET    /users/edit(.:format)                       devise/registrations#edit
+                           PATCH  /users(.:format)                            devise/registrations#update
+                           PUT    /users(.:format)                            devise/registrations#update
+                           DELETE /users(.:format)                            devise/registrations#destroy
+                   samples GET    /samples(.:format)                          samples#index
+                           POST   /samples(.:format)                          samples#create
+                new_sample GET    /samples/new(.:format)                      samples#new
+               edit_sample GET    /samples/:id/edit(.:format)                 samples#edit
+                    sample GET    /samples/:id(.:format)                      samples#show
+                           PATCH  /samples/:id(.:format)                      samples#update
+                           PUT    /samples/:id(.:format)                      samples#update
+                           DELETE /samples/:id(.:format)                      samples#destroy
+                 tutorials GET    /tutorials(.:format)                        tutorials#index
+                           POST   /tutorials(.:format)                        tutorials#create
+              new_tutorial GET    /tutorials/new(.:format)                    tutorials#new
+             edit_tutorial GET    /tutorials/:id/edit(.:format)               tutorials#edit
+                  tutorial GET    /tutorials/:id(.:format)                    tutorials#show
+                           PATCH  /tutorials/:id(.:format)                    tutorials#update
+                           PUT    /tutorials/:id(.:format)                    tutorials#update
+                           DELETE /tutorials/:id(.:format)                    tutorials#destroy
+                 trainings GET    /trainings(.:format)                        trainings#index
+                           POST   /trainings(.:format)                        trainings#create
+              new_training GET    /trainings/new(.:format)                    trainings#new
+             edit_training GET    /trainings/:id/edit(.:format)               trainings#edit
+                  training GET    /trainings/:id(.:format)                    trainings#show
+                           PATCH  /trainings/:id(.:format)                    trainings#update
+                           PUT    /trainings/:id(.:format)                    trainings#update
+                           DELETE /trainings/:id(.:format)                    trainings#destroy
+   miscellaneous_abilities GET    /miscellaneous_abilities(.:format)          miscellaneous_abilities#index
+                           POST   /miscellaneous_abilities(.:format)          miscellaneous_abilities#create
+ new_miscellaneous_ability GET    /miscellaneous_abilities/new(.:format)      miscellaneous_abilities#new
+edit_miscellaneous_ability GET    /miscellaneous_abilities/:id/edit(.:format) miscellaneous_abilities#edit
+     miscellaneous_ability GET    /miscellaneous_abilities/:id(.:format)      miscellaneous_abilities#show
+                           PATCH  /miscellaneous_abilities/:id(.:format)      miscellaneous_abilities#update
+                           PUT    /miscellaneous_abilities/:id(.:format)      miscellaneous_abilities#update
+                           DELETE /miscellaneous_abilities/:id(.:format)      miscellaneous_abilities#destroy
+                job_duties GET    /job_duties(.:format)                       job_duties#index
+                           POST   /job_duties(.:format)                       job_duties#create
+              new_job_duty GET    /job_duties/new(.:format)                   job_duties#new
+             edit_job_duty GET    /job_duties/:id/edit(.:format)              job_duties#edit
+                  job_duty GET    /job_duties/:id(.:format)                   job_duties#show
+                           PATCH  /job_duties/:id(.:format)                   job_duties#update
+                           PUT    /job_duties/:id(.:format)                   job_duties#update
+                           DELETE /job_duties/:id(.:format)                   job_duties#destroy
+                      jobs GET    /jobs(.:format)                             jobs#index
+                           POST   /jobs(.:format)                             jobs#create
+                   new_job GET    /jobs/new(.:format)                         jobs#new
+                  edit_job GET    /jobs/:id/edit(.:format)                    jobs#edit
+                       job GET    /jobs/:id(.:format)                         jobs#show
+                           PATCH  /jobs/:id(.:format)                         jobs#update
+                           PUT    /jobs/:id(.:format)                         jobs#update
+                           DELETE /jobs/:id(.:format)                         jobs#destroy
+            service_skills GET    /service_skills(.:format)                   service_skills#index
+                           POST   /service_skills(.:format)                   service_skills#create
+         new_service_skill GET    /service_skills/new(.:format)               service_skills#new
+        edit_service_skill GET    /service_skills/:id/edit(.:format)          service_skills#edit
+             service_skill GET    /service_skills/:id(.:format)               service_skills#show
+                           PATCH  /service_skills/:id(.:format)               service_skills#update
+                           PUT    /service_skills/:id(.:format)               service_skills#update
+                           DELETE /service_skills/:id(.:format)               service_skills#destroy
+                  services GET    /services(.:format)                         services#index
+                           POST   /services(.:format)                         services#create
+               new_service GET    /services/new(.:format)                     services#new
+              edit_service GET    /services/:id/edit(.:format)                services#edit
+                   service GET    /services/:id(.:format)                     services#show
+                           PATCH  /services/:id(.:format)                     services#update
+                           PUT    /services/:id(.:format)                     services#update
+                           DELETE /services/:id(.:format)                     services#destroy
+                   resumes GET    /resumes(.:format)                          resumes#index
+                           POST   /resumes(.:format)                          resumes#create
+                new_resume GET    /resumes/new(.:format)                      resumes#new
+               edit_resume GET    /resumes/:id/edit(.:format)                 resumes#edit
+                    resume GET    /resumes/:id(.:format)                      resumes#show
+                           PATCH  /resumes/:id(.:format)                      resumes#update
+                           PUT    /resumes/:id(.:format)                      resumes#update
+                           DELETE /resumes/:id(.:format)                      resumes#destroy
+                     users GET    /users(.:format)                            users#index
+                           POST   /users(.:format)                            users#create
+                  new_user GET    /users/new(.:format)                        users#new
+                 edit_user GET    /users/:id/edit(.:format)                   users#edit
+                      user GET    /users/:id(.:format)                        users#show
+                           PATCH  /users/:id(.:format)                        users#update
+                           PUT    /users/:id(.:format)                        users#update
+                           DELETE /users/:id(.:format)                        users#destroy
+               about_index GET    /about(.:format)                            about#index
+                           POST   /about(.:format)                            about#create
+                 new_about GET    /about/new(.:format)                        about#new
+                edit_about GET    /about/:id/edit(.:format)                   about#edit
+                     about GET    /about/:id(.:format)                        about#show
+                           PATCH  /about/:id(.:format)                        about#update
+                           PUT    /about/:id(.:format)                        about#update
+                           DELETE /about/:id(.:format)                        about#destroy
+                  contacts GET    /contacts(.:format)                         contacts#index
+                           POST   /contacts(.:format)                         contacts#create
+               new_contact GET    /contacts/new(.:format)                     contacts#new
+              edit_contact GET    /contacts/:id/edit(.:format)                contacts#edit
+                   contact GET    /contacts/:id(.:format)                     contacts#show
+                           PATCH  /contacts/:id(.:format)                     contacts#update
+                           PUT    /contacts/:id(.:format)                     contacts#update
+                           DELETE /contacts/:id(.:format)                     contacts#destroy
+                home_index GET    /home(.:format)                             home#index
+                           POST   /home(.:format)                             home#create
+                  new_home GET    /home/new(.:format)                         home#new
+                 edit_home GET    /home/:id/edit(.:format)                    home#edit
+                      home GET    /home/:id(.:format)                         home#show
+                           PATCH  /home/:id(.:format)                         home#update
+                           PUT    /home/:id(.:format)                         home#update
+                           DELETE /home/:id(.:format)                         home#destroy
+                      root GET    /                                           home#index
+                     admin GET    /admin(.:format)                            admin#index

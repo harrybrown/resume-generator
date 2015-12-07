@@ -1,0 +1,2 @@
+module Admin::ServiceSkillsHelper
+end

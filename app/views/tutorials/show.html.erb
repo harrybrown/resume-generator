@@ -1,0 +1,43 @@
+<div class="custom-ym-wrapper">
+  <div class="ym-wbox">   
+    <main>
+      <div class="ym-column linearize-level-1 ">
+        <div class="ym-col1">
+          <section class="box info">
+
+            <p id="notice"><%= notice %></p>
+
+        <%= link_to 'Back to Tutorials', tutorials_path, :class => 'ym-button ym-primary mbxl floatr' %>
+
+            <p>
+              <strong><%= @tutorial.topic %></strong>
+              <%= raw(@tutorial.video_embed_code) %>
+            </p>
+
+            <p>
+              <strong>Category:</strong>
+              <%= @tutorial.category %>
+            </p>
+
+            <p>
+              <strong>Description:</strong>
+              <%= @tutorial.description %>
+            </p>
+
+            <p>
+              <strong>Publish date:</strong>
+              <%= @tutorial.publish_date %>
+            </p>
+
+            <%#= link_to 'Edit', edit_tutorial_path(@tutorial) %> 
+            <%#= link_to 'Back', tutorials_path %>
+
+
+          </section>
+        </div>
+        
+      </div>
+    </main>   
+  </div>
+</div>
+

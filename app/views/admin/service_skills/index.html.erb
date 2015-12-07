@@ -1,0 +1,25 @@
+<h1>Listing service_skills</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @service_skills.each do |service_skill| %>
+      <tr>
+        <td><%= link_to 'Show', service_skill %></td>
+        <td><%= link_to 'Edit', edit_service_skill_path(service_skill) %></td>
+        <td><%= link_to 'Destroy', service_skill, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Service skill', new_service_skill_path %>

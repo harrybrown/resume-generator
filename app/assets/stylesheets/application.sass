@@ -1,0 +1,43 @@
+@charset "utf-8"
+/* Non Premium Variables */
+$primary_color: #144b64
+
+$dark_shade: darken($primary_color, 10%)
+$darker_shade: darken($primary_color, 16%)
+$darkest_shade: darken($primary_color, 20%)
+$alternate_darker: desaturate(darken(adjust-hue($primary_color, -20%), 40%), 40%)  
+
+$light_shade: lighten($primary_color, 20%)
+$lighter_shade:  lighten($primary_color, 40%)
+$lightest_shade: lighten($primary_color, 60%)
+$alternate_lighter: desaturate(lighten(adjust-hue($primary_color, -20%), 40%), 40%)  
+
+
+/* YUI Reset */
+@import "yaml/**/*"
+
+/* Colors, Typography and Mixins */
+
+/* Google Font API */
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:300)
+@import url(https://fonts.googleapis.com/css?family=Josefin+Sans:100)
+
+/* Interface */
+
+@import "scaffolds.sass"
+
+
+/* Containers */
+
+
+/* Objects */
+
+
+/* Layout */
+
+
+/* Utilities */
+
+
+/* Special */
+

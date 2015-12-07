@@ -1,0 +1,25 @@
+<h1>Listing miscellaneous_abilities</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @miscellaneous_abilities.each do |miscellaneous_ability| %>
+      <tr>
+        <td><%= link_to 'Show', miscellaneous_ability %></td>
+        <td><%= link_to 'Edit', edit_miscellaneous_ability_path(miscellaneous_ability) %></td>
+        <td><%= link_to 'Destroy', miscellaneous_ability, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Miscellaneous ability', new_miscellaneous_ability_path %>

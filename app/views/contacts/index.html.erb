@@ -1,0 +1,36 @@
+<div class="custom-ym-wrapper">
+  <div class="ym-wbox">   
+    <main>
+      <div class="ym-column linearize-level-1">
+        <div class="ym-col1">
+          <div class="ym-cbox">
+            <section class="box info">
+              <h1><img src="assets/rexy.png"></h1>
+              <h1>Contact Info</h1>
+              <h4><%= @user.first_name %> <%= @user.middle_name %> <%= @user.last_name %>, <%= @user.suffix_name %></h4>
+              <h5><%= mail_to(@user.email) %></h5>
+              <h3><%= @user.phone %></h3>
+            </section>
+            
+          </div>
+        </div>
+        <aside class="ym-col3">
+          <h2>Thank you for visiting my website.</h2>
+            <article class="ym-gl">
+              <div class="ym-gbox">
+                <!-- content -->
+                <h3>Work Opportunties Welcome.</h3>
+                <p>I'm always looking for web development opportunities. There is nothing I love more than planning and tackling a challenging project.</p>
+                <p>Please feel free to contact me... day or night. I'm always on call... and ready to assist you with your web development needs.</p>
+                <p>Have a super day!</p>
+                <p><img src="assets/sunshine.png"></p>
+              </div>
+            </article>
+            
+        </aside>
+      </div>
+    </main>   
+  </div>
+</div>
+
+

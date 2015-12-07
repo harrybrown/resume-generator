@@ -1,0 +1,2 @@
+module MiscellaneousAbilitiesHelper
+end

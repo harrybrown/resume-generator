@@ -1,0 +1,57 @@
+<div class="custom-ym-wrapper">
+  <div class="ym-wbox">   
+    <main>
+      <div class="ym-column linearize-level-1 ">
+        <div class="ym-col1">
+          <section class="box info">
+            <h1>Skills</h1>
+            <table>
+              <tbody>
+                <% @services.each do |service| %>
+                  <tr>
+                    <td>
+                      <h4><%= service.name %></h4>
+                      <table>
+                        <% service.service_skills.each do |skill| %>
+                          <tr>
+                            <td>
+                              <h6><%#= link_to(skill.name, edit_service_skill_path(skill)) %><%= skill.name %></h6>
+                              <p><small>My Skill Level: </small><big><%= skill.my_skill_level %></big>
+                            </td>
+                            <td>
+                              <%= skill.description %>
+                            </td>
+                          </tr>
+                        <% end %>
+                      </table>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+            <br>
+          </section>
+        </div>
+        <aside class="ym-col3">
+          <div class="ym-cbox">
+            <h2>What I can do</h2>
+            <h4>Core Skills</h4>
+            <div class="ym-contain-dt">
+              <img src="../assets/logos/logos-resized/ruby.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/rails.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/wordpress.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/github.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/responsive.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/html5.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/css3.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/photoshop.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/jquery.png" alt="ads" class="float-left bordered"/>
+              <img src="../assets/logos/logos-resized/sass.png" alt="ads" class="float-left bordered"/>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </main>   
+  </div>
+</div>
+
