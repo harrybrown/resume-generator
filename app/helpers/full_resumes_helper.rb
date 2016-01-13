@@ -1,0 +1,2 @@
+module FullResumesHelper
+end

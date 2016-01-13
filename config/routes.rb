@@ -1,7 +1,7 @@
 Career::Application.routes.draw do
+  resources :full_resumes
   resources :miscellaneous
   resources :interests
-  resources :languages
   resources :languages
   resources :skills
   resources :school_achievements

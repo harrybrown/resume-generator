@@ -1,0 +1,26 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Full Resumes</h1>
+<%= @user.id %>
+<%= @resume.objective %>
+<table>
+  <thead>
+    <tr>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @full_resumes.each do |full_resume| %>
+      <tr>
+        <td><%= link_to 'Show', full_resume %></td>
+        <td><%= link_to 'Edit', edit_full_resume_path(full_resume) %></td>
+        <td><%= link_to 'Destroy', full_resume, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Full resume', new_full_resume_path %>
