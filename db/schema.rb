@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160113183643) do
+ActiveRecord::Schema.define(version: 20160113185854) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,13 +40,19 @@ ActiveRecord::Schema.define(version: 20160113183643) do
     t.integer  "resume_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "interests", ["user_id"], name: "index_interests_on_user_id", using: :btree
 
   create_table "languages", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
+
+  add_index "languages", ["user_id"], name: "index_languages_on_user_id", using: :btree
 
   create_table "miscellaneous", force: :cascade do |t|
     t.string   "name"
@@ -54,7 +60,10 @@ ActiveRecord::Schema.define(version: 20160113183643) do
     t.integer  "resume_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "miscellaneous", ["user_id"], name: "index_miscellaneous_on_user_id", using: :btree
 
   create_table "resumes", force: :cascade do |t|
     t.string   "target_job"
@@ -82,7 +91,10 @@ ActiveRecord::Schema.define(version: 20160113183643) do
     t.string   "field_of_study"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.integer  "user_id"
   end
+
+  add_index "schools", ["user_id"], name: "index_schools_on_user_id", using: :btree
 
   create_table "skills", force: :cascade do |t|
     t.string   "skill_name"
@@ -91,7 +103,10 @@ ActiveRecord::Schema.define(version: 20160113183643) do
     t.integer  "rating"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "user_id"
   end
+
+  add_index "skills", ["user_id"], name: "index_skills_on_user_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"
@@ -138,7 +153,16 @@ ActiveRecord::Schema.define(version: 20160113183643) do
     t.date     "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "user_id"
   end
 
+  add_index "works", ["user_id"], name: "index_works_on_user_id", using: :btree
+
+  add_foreign_key "interests", "users"
+  add_foreign_key "languages", "users"
+  add_foreign_key "miscellaneous", "users"
   add_foreign_key "resumes", "users"
+  add_foreign_key "schools", "users"
+  add_foreign_key "skills", "users"
+  add_foreign_key "works", "users"
 end
