@@ -2,6 +2,8 @@ source 'https://rubygems.org'
 #for password
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'pry-rails', '~> 0.3.4'
+
 gem 'rails_12factor', group: :production
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'

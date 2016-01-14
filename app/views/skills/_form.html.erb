@@ -23,6 +23,10 @@
     <%= f.label :resume_id %><br>
     <%= f.number_field :resume_id %>
   </div>
+ <div class="field hidden">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id, value: current_user.id  %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

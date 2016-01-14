@@ -7,6 +7,12 @@ class FullResumesController < ApplicationController
     @full_resumes = FullResume.all
     @user = current_user
     @resume = Resume.find(@user.id)
+    @schools = School.where(:user_id => @user.id)
+    @works = Work.where(:user_id => @user.id)
+    @interests = Interest.where(:user_id => @user.id)
+    @languages = Language.where(:user_id => @user.id)
+    @miscellaneous = Miscellaneou.where(:user_id => @user.id)
+    @skills = Skill.where(:user_id => @user.id)
   end
 
   # GET /full_resumes/1
