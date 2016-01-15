@@ -14,7 +14,9 @@ class WorkDutiesController < ApplicationController
 
   # GET /work_duties/new
   def new
-    @work_duty = WorkDuty.new
+    binding.pry
+    @work_duty = WorkDuty.new(params[:work_duty])
+      binding.pry
   end
 
   # GET /work_duties/1/edit

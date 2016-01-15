@@ -1,6 +1,7 @@
 <p id="notice"><%= notice %></p>
 
 <h1>Listing Works</h1>
+    <% @works.each do |work| %>
 
 <table>
   <thead>
@@ -16,7 +17,6 @@
   </thead>
 
   <tbody>
-    <% @works.each do |work| %>
       <tr>
         <td><%= work.title %></td>
         <td><%= work.company %></td>
@@ -28,9 +28,45 @@
         <td><%= link_to 'Edit', edit_work_path(work) %></td>
         <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+      </tbody>
+      </table>
+
+      <table style="border: 1px solid #aaaaaa; margin-left: 160px; background-color: #dddddd; width: 800px;">
+        <thead>
+          <tr>
+            <th>Work</th>
+            <th>Task</th>
+            <th>Description</th>
+            <th colspan="3"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% work.work_duties.each do |work_duty| %>
+            <tr>
+              <td><%= work_duty.work_id %></td>
+              <td><%= work_duty.task %></td>
+              <td><%= work_duty.description %></td>
+              <td><%= link_to 'Show', work_duty %></td>
+              <td><%= link_to 'Edit', edit_work_duty_path(work_duty) %></td>
+              <td><%= link_to 'Destroy', work_duty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+            </tr>
+          <% end %>
+          <tr>
+            <td><%= link_to 'New Work duty', new_work_duty_path({ :work_id => work.id })   %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+      <br>
+
+      
+
+
+
+          <% end %>
+
 
 <br>
 
