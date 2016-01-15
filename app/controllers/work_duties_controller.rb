@@ -14,9 +14,7 @@ class WorkDutiesController < ApplicationController
 
   # GET /work_duties/new
   def new
-    binding.pry
     @work_duty = WorkDuty.new(params[:work_duty])
-      binding.pry
   end
 
   # GET /work_duties/1/edit
@@ -30,7 +28,7 @@ class WorkDutiesController < ApplicationController
 
     respond_to do |format|
       if @work_duty.save
-        format.html { redirect_to @work_duty, notice: 'Work duty was successfully created.' }
+        format.html { redirect_to works_path, notice: 'Work duty was successfully created.' }
         format.json { render action: 'show', status: :created, location: @work_duty }
       else
         format.html { render action: 'new' }
@@ -44,7 +42,7 @@ class WorkDutiesController < ApplicationController
   def update
     respond_to do |format|
       if @work_duty.update(work_duty_params)
-        format.html { redirect_to @work_duty, notice: 'Work duty was successfully updated.' }
+        format.html { redirect_to works_path, notice: 'Work duty was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }

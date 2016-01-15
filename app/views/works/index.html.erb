@@ -48,12 +48,12 @@
               <td><%= work_duty.task %></td>
               <td><%= work_duty.description %></td>
               <td><%= link_to 'Show', work_duty %></td>
-              <td><%= link_to 'Edit', edit_work_duty_path(work_duty) %></td>
+              <td><%= link_to 'Edit', edit_work_duty_path(work_duty, { :work_id => work.id }) %></td>
               <td><%= link_to 'Destroy', work_duty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
             </tr>
           <% end %>
-          <tr>
-            <td><%= link_to 'New Work duty', new_work_duty_path({ :work_id => work.id })   %>
+          <tr style="background: #ffffff">
+            <td style="background: #ffffff" colspan="6"><%= link_to 'New Work duty', new_work_duty_path({ :work_id => work.id }), :class => 'button'   %>
             </td>
           </tr>
         </tbody>
