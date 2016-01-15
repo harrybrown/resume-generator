@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   has_many :works
   has_many :skills
   has_many :schools
+  has_many :miscellaneous
 
 
 end

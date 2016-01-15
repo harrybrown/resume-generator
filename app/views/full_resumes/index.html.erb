@@ -34,4 +34,54 @@
 </table>
 
 <br>
+<table>
+  <tbody>
+    <% @interests.each do |interest| %>
+      <tr>
+        <td><%= interest.name %></td>
+        <td><%= interest.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<table>
+  <tbody>
+    <% @languages.each do |language| %>
+      <tr>
+        <td><%= language.name %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<table>
+  <tbody>
+    <% @skills.each do |skill| %>
+      <tr>
+        <td><%= skill.name %></td>
+        <td><%= skill.city %></td>
+        <td><%= skill.state %></td>
+        <td><%= skill.completion_date %></td>
+        <td><%= skill.field_of_study %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<br>
+<table>
+  <tbody>
+    <% @miscellaneous.each do |miscellanou| %>
+      <tr>
+        <td><%= miscellanou.name %></td>
+        <td><%= miscellanou.description %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
