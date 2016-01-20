@@ -1,6 +1,8 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Listing Works</h1>
+<h1>Jobs <span class="floatr"><%= link_to 'Add New Job', new_work_path, :class => 'buttonA'  %></span></h1>
+
+
     <% @works.each do |work| %>
 
 <table>
@@ -24,9 +26,9 @@
         <td><%= work.state %></td>
         <td><%= work.start_date %></td>
         <td><%= work.end_date %></td>
-        <td><%= link_to 'Show', work %></td>
-        <td><%= link_to 'Edit', edit_work_path(work) %></td>
-        <td><%= link_to 'Destroy', work, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--<td><%#= link_to 'Show', work %></td>-->
+        <td><%= link_to 'Edit', edit_work_path(work), :class => 'edit' %></td>
+        <td><%= link_to 'Delete', work, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete' %></td>
       </tr>
       </tbody>
       </table>
@@ -47,13 +49,13 @@
               <td><%= work_duty.work_id %></td>
               <td><%= work_duty.task %></td>
               <td><%= work_duty.description %></td>
-              <td><%= link_to 'Show', work_duty %></td>
-              <td><%= link_to 'Edit', edit_work_duty_path(work_duty, { :work_id => work.id }) %></td>
-              <td><%= link_to 'Destroy', work_duty, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+              <!--<td><%#= link_to 'Show', work_duty, :class => 'show' %></td>-->
+              <td><%= link_to 'Edit', edit_work_duty_path(work_duty, { :work_id => work.id }), :class => 'edit' %></td>
+              <td><%= link_to 'Delete', work_duty, method: :delete, data: { confirm: 'Are you sure?' }, :class => 'delete' %></td>
             </tr>
           <% end %>
           <tr style="background: #ffffff">
-            <td style="background: #ffffff" colspan="6"><%= link_to 'New Work duty', new_work_duty_path({ :work_id => work.id }), :class => 'button'   %>
+            <td style="background: #ffffff" colspan="6"><%= link_to 'Add Job Duty', new_work_duty_path({ :work_id => work.id }), :class => 'buttonB'   %>
             </td>
           </tr>
         </tbody>
@@ -70,4 +72,4 @@
 
 <br>
 
-<%= link_to 'New Work', new_work_path %>
+<h1><%= link_to 'Add New Job', new_work_path, :class => 'buttonA'  %></h1>
